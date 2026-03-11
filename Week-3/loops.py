@@ -1,34 +1,48 @@
-total_score = 0
-
-# Define the test bank with quiz questions
-test_bank = [
+# Create a list of dictionaries
+quiz = [
     {
-        "prompt": "What is the capital of France?",
-        "options": ["A) London", "B) Paris", "C) Berlin"],
-        "answer": "B"
+        "question": "What is 5 + 5?",
+        "options": ["A. 8", "B. 10", "C. 12"],
+        "correct_answer": "B"
     },
     {
-        "prompt": "What is 2 + 2?",
-        "options": ["A) 3", "B) 4", "C) 5"],
-        "answer": "B"
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["A. function", "B. def", "C. fun"],
+        "correct_answer": "B"
+    },
+    {
+        "question": "What type of data is (1, 2, 3)?",
+        "options": ["A. List", "B. Dictionary", "C. Tuple"],
+        "correct_answer": "C"
     }
 ]
 
-# Iterating through the list of dictionaries
-for q in test_bank:
-    print("\n" + q["prompt"])
-    for option in q["options"]:
-        print(option)
-        
-    # user_answer = input("Enter your answer (A, B, or C): ")
-    # For practice, let's hardcode an answer instead of using input()
-    user_answer = "A" 
-    
-    if user_answer == q["answer"]:
-        print("Correct!")
-        total_score += 1
-    else:
-        print("Incorrect.")
+score = 0
 
-# Do it now: Write a simple `while` loop that acts as a 10-second timer, printing the seconds counting down from 10 to 0.
+# Loop through the quiz
+for item in quiz:
+    print("\n" + item["question"])
+    for option in item["options"]:
+        print(option)
+
+    answer = input("Enter your answer (A, B, or C): ").upper()
+
+    if answer == item["correct_answer"]:
+        print("Correct")
+        score += 1
+    else:
+        print("Wrong")
+
+# Function to calculate result
+def result(score, total):
+    percentage = (score / total) * 100
+    print("\nFinal Score:", score, "/", total)
+    print("Percentage:", percentage, "%")
+
+    if percentage >= 50:
+        print("PASS")
+    else:
+        print("FAIL")
+
+result(score, len(quiz))
 
