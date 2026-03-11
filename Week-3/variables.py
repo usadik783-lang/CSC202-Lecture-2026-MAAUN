@@ -1,28 +1,97 @@
-# Create your variables
-candidate_name = 'Muhammad Hassan'         # String
-student_id = 104576             # Integer
-test_score = 88.45              # Float
-has_completed_test = True     # Boolean
-age = 25                        # Integer
+# List containing dictionaries
+quiz = [
+    {
+        "question": "What is the capital of Nigeria?",
+        "options": ["A. Lagos", "B. Abuja", "C. Kano", "D. Kaduna"],
+        "correct_answer": "B"
+    },
+    {
+        "question": "Which language is used for CLI programs?",
+        "options": ["A. Python", "B. HTML", "C. CSS", "D. Photoshop"],
+        "correct_answer": "A"
+    },
+    {
+        "question": "What does CPU stand for?",
+        "options": ["A. Central Process Unit", "B. Central Processing Unit", "C. Computer Personal Unit", "D. Control Processing Unit"],
+        "correct_answer": "B"
+    }
+]
 
-# Do it now: Print a welcome message using an f-string (formatted string) that includes the candidate's name and ID.
-#print(f"Welcome {candidate_name} (ID: {student_id}) to the examination portal.")
+score = 0
 
-# Relational operators and control flow
-# Relational operators: >, <, >=, <=, ==, !=
+# Loop through questions
+for q in quiz:
+    print("\n" + q["question"])
+    
+    for option in q["options"]:
+        print(option)
 
-if age >= 16:
-    # Check if the user is eligible to take the test based on age
-    print(f"{candidate_name} is eligible to take the test.")
-    if has_completed_test==True: # Checker, is left side of the equation is equal to the right side of the equation
-        # Will be executed if the condition above is true
-        print(f"Logged in student: {student_id}")
-        print(f"{candidate_name} has completed the test with a score of {test_score}.")
-        print("Congratulations on completing the test!")
+    answer = input("Enter your answer (A/B/C/D): ")
+
+    if answer.upper() == q["correct_answer"]:
+        print("Correct!")
+        score += 1
     else:
-        # Will be executed if the condition above is false
-        print(f"{candidate_name} has not completed the test yet.")
-        print("Please complete the test to see your score.")
+        print("Wrong!")
 
+# Function to calculate percentage
+def calculate_percentage(score, total):
+    return (score / total) * 100
+
+percentage = calculate_percentage(score, len(quiz))
+
+print("\nFinal Score:", score, "/", len(quiz))
+print("Percentage:", percentage, "%")
+
+if percentage >= 50:
+    print("Pass")
 else:
-    print(f"{candidate_name} is not eligible to take the test. Minimum age requirement is 16.")
+    print("Fail")# List containing dictionaries
+quiz = [
+    {
+        "question": "What is the capital of Nigeria?",
+        "options": ["A. Lagos", "B. Abuja", "C. Kano", "D. Kaduna"],
+        "correct_answer": "B"
+    },
+    {
+        "question": "Which language is used for CLI programs?",
+        "options": ["A. Python", "B. HTML", "C. CSS", "D. Photoshop"],
+        "correct_answer": "A"
+    },
+    {
+        "question": "What does CPU stand for?",
+        "options": ["A. Central Process Unit", "B. Central Processing Unit", "C. Computer Personal Unit", "D. Control Processing Unit"],
+        "correct_answer": "B"
+    }
+]
+
+score = 0
+
+# Loop through questions
+for q in quiz:
+    print("\n" + q["question"])
+    
+    for option in q["options"]:
+        print(option)
+
+    answer = input("Enter your answer (A/B/C/D): ")
+
+    if answer.upper() == q["correct_answer"]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong!")
+
+# Function to calculate percentage
+def calculate_percentage(score, total):
+    return (score / total) * 100
+
+percentage = calculate_percentage(score, len(quiz))
+
+print("\nFinal Score:", score, "/", len(quiz))
+print("Percentage:", percentage, "%")
+
+if percentage >= 50:
+    print("Pass")
+else:
+    print("Fail")
