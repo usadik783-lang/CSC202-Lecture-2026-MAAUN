@@ -1,2 +1,11 @@
-# CSC202-Lecture-2026-MAAUN
-This should contain all the codes for lecture notes for CSC202 MAAUN
+# Mini CBT Engine
+
+Simple Flask quiz application.
+
+Run:
+
+pip install flask
+python app.py
+
+Open browser:
+http://127.0.0.1:5000
