@@ -1,0 +1,18 @@
+# Mini CBT Flask Project
+
+Name: Usman Sadiqu shuaibu  
+Course: CSC202  
+Assignment: Flask Web Application  
+
+## Project Description
+This project implements a simple Computer Based Test (CBT) system using Python Flask.  
+It demonstrates the use of Object-Oriented Programming, data structures, and Python standard libraries.
+
+## Features
+- Question class implemented using OOP
+- Web interface using Flask
+- Score calculation after test submission
+- Timestamp using Python datetime module
+
+## GitHub Repository
+https://github.com/usadik783-lang/mini_cbt
