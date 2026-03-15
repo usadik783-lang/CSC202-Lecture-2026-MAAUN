@@ -1,0 +1,28 @@
+from collections import deque
+
+# 1. Initialize
+application_inbox = deque()     # Queue
+processed_history = []          # Stack
+
+# 2. Ingest Data (messy startup names)
+messy_names = [" TechCorp ", "bio-gen", "  StartUpX ", " AI-Labs "]
+
+# Clean and add to queue
+for name in messy_names:
+    clean_name = name.lower().strip()
+    application_inbox.append(clean_name)
+
+print("Application Inbox:", application_inbox)
+
+
+# 3. Process (FIFO)
+while application_inbox:
+    name = application_inbox.popleft()
+    print("Approving:", name)
+    processed_history.append(name)
+
+
+# 4. Undo (LIFO)
+if processed_history:
+    last = processed_history.pop()
+    print("Reverting approval for:", last)
